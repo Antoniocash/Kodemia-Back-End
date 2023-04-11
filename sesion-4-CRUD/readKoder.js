@@ -6,12 +6,12 @@ function readKoders(){
     if (error) {
         console.log(error)
     } else {
-    console.log(data.toString())
+    const koderList = JSON.parse(data)
+    console.log(koderList)
     }
 })
 }
 
 readKoders()
 
-export {readKoders}
 

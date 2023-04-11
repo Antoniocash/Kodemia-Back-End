@@ -1,18 +1,1 @@
-{
- "koders": [
-  {
-   "id": 1,
-   "name": "Antonio",
-   "lastName": "Batista",
-   "age": 29,
-   "favoriteFood": "Sushi"
-  },
-  {
-   "id": 2,
-   "name": "Jesus",
-   "lastName": "Mendoza",
-   "age": 25,
-   "favoriteFood": "Caviar"
-  }
- ]
-}
+"{\n \"koders\": [\n  {\n   \"id\": 1,\n   \"name\": \"Antonio\",\n   \"lastName\": \"Batista\",\n   \"age\": 29,\n   \"favoriteFood\": \"Sushi\"\n  },\n  {\n   \"id\": 2,\n   \"name\": \"Jesus\",\n   \"lastName\": \"Mendoza\",\n   \"age\": 25,\n   \"favoriteFood\": \"Caviar\"\n  },\n  {\n   \"id\": 3,\n   \"name\": \"Andrea\",\n   \"lastName\": \"Mazzoco\",\n   \"age\": 26,\n   \"favoriteFood\": \"Verduritas\"\n  },\n  {\n   \"id\": 4,\n   \"name\": \"Hola\",\n   \"lastName\": \"KAse\",\n   \"age\": 50,\n   \"favoriteFood\": \"Aire\"\n  },\n  {\n   \"id\": 5,\n   \"name\": \"AAAAAAA\",\n   \"lastName\": \"bbbbbb\",\n   \"age\": 230,\n   \"favoriteFood\": \"Comer\"\n  }\n ]\n}"
