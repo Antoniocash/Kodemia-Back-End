@@ -1,0 +1,39 @@
+{
+    "koders": [
+      {
+        "id": 1,
+        "name": "Kodersito Menor",
+        "lastName": "Mentor",
+        "Age": 20,
+        "favoriteFood": "Algo rico x3"
+      },
+      {
+        "id": 2,
+        "name": "Alfredo",
+        "lastName": "Mentor",
+        "Age": 26,
+        "favoriteFood": "pizza"
+      },
+      {
+        "id": 3,
+        "name": "Jesús",
+        "lastName": "Mendoza",
+        "Age": 22,
+        "favoriteFood": "Pizza"
+      },
+      {
+        "id": 4,
+        "name": "Tets",
+        "lastName": "test",
+        "Age": 99,
+        "favoriteFood": "tets"
+      },
+      {
+        "id": 5,
+        "name": "Tets",
+        "lastName": "test",
+        "Age": 99,
+        "favoriteFood": "test editado"
+      }
+    ]
+  }
