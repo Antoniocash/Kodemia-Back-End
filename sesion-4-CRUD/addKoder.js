@@ -32,12 +32,12 @@ const newKoder4 = {
     "favoriteFood": "Comer"
 }
 
-let koderList = {}
+let data = {}
 fs.readFile("/home/antnio/back-end/sesion-4-CRUD/koders.json", (error, content)=>{
     if (error) throw error
-    koderList = JSON.parse(content)
-    console.log(koderList)
-    koderList["koders"].push(newKoder)
+    data = JSON.parse(content)
+    console.log(data)
+    data["koders"].push(newKoder)
     fs.writeFile("/home/antnio/back-end/sesion-4-CRUD/koders.json", JSON.stringify(data, null, " "), (error) =>{
         if (error) throw error
         console.log("Koder agregado")
