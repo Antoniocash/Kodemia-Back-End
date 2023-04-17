@@ -7,6 +7,7 @@ router.get("/",async(request, response)=>{
     const dataFile = await fs.promises.readFile("./kodemia.json", "utf8")
     const json = JSON.parse(dataFile)
     let mentors = json["mentors"]
+    console.log(mentors)
 
     const {module, age, generations} = request.query
 
@@ -32,32 +33,42 @@ router.get("/",async(request, response)=>{
     })
 })
 
-router.get("/:id", async (request, response)=>{
-
+router.post("/", async (request, response)=>{
     const dataFile = await fs.promises.readFile("./kodemia.json", "utf8")
     const json = JSON.parse(dataFile)
-    
-    const id = parseInt(request.params.id)
-    const result = json.mentors.find(item => item.id === id)   
+    let mentors = json["mentors"]
 
-    response.json ({
-        data: {
-            mentors: result
-        }
-    })
+    let newMentor = request.body
 
-    response.json({message})
+    mentors.push(newMentor)
 
-})
-router.patch("/",(request, response)=>{
+    await fs.promises.writeFile("./kodemia.json", JSON.stringify(json, null, 2), "utf8") 
 
-    response.json({message: "Aqui se actualizaran los koders" })
 
+    const message = {
+        success: true,
+        message: "Se agrego un mentor existosamente"
+    }
+
+    response.json(message)
 })
 
-router.delete("/",(request, response)=>{
+router.delete("/:idMentor", async (request, response)=>{
 
-    response.json({message: "Aqui se eliminaran los koders" })
+    const id = request.params.idMentor
+    const dataFile = await fs.promises.readFile("./kodemia.json", "utf8")
+    const json = JSON.parse(dataFile)
+    const elementIndex = json.mentors.findIndex((item => item.id == id))
+    console.log(elementIndex)
+    json.mentors.splice(elementIndex, 1)
+
+    await fs.promises.writeFile("./kodemia.json", JSON.stringify(json, null, 2), "utf8")
+
+    const message = {
+        success: true,
+        message: "Se elimino mentor"
+    }
+
 })
 
 export default router

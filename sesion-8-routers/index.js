@@ -6,7 +6,8 @@ const server = express() // crea servidor
 const port = 8080
 
 server.use(express.json())
-server.use("/koders", kodersRouter, mentorsRouter)
+server.use("/koders", kodersRouter)
+server.use("/mentors", mentorsRouter)
 
 
 server.listen(port, ()=>{
