@@ -1,0 +1,47 @@
+{
+  "koders": [
+    {
+      "id": 1,
+      "name": "Javier",
+      "age": "29",
+      "generation": "24",
+      "location": "Metepec"
+    },
+    {
+      "id": 2,
+      "name": "Manuel",
+      "age": "36",
+      "generation": "24",
+      "location": "CDMX"
+    },
+    {
+      "id": 3,
+      "name": "Antonio",
+      "age": "29",
+      "generation": "24",
+      "location": "Puebla"
+    },
+    {
+      "id": 4,
+      "name": "Damaris",
+      "age": "xx",
+      "generation": "xx",
+      "location": "Xxxx"
+    },
+    {
+      "id": 5,
+      "name": "Olakase",
+      "age": "xx",
+      "generation": "xx",
+      "location": "Xxxx"
+    }
+  ],
+  "mentors":[
+    {
+      "name": "Alfred",
+      "module": "backend",
+      "age": 29,
+      "generations": ["20", "24"]
+    }
+  ]
+}

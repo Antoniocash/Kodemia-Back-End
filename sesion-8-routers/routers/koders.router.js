@@ -3,7 +3,7 @@ import fs from "fs"
 
 const router = express.Router() // crea el router
 
-server.get("/mentors",async(request, response)=>{
+router.get("/",async(request, response)=>{
 
     const dataFile = await fs.promises.readFile("./kodemia.json", "utf8")
     const json = JSON.parse(dataFile)
@@ -17,7 +17,7 @@ server.get("/mentors",async(request, response)=>{
     })
 })
 
-router.post("/mentors", async (request, response)=>{
+router.post("/", async (request, response)=>{
 
     const dataFile = await fs.promises.readFile("./kodemia.json", "utf8")
     const json = JSON.parse(dataFile)
@@ -38,13 +38,13 @@ router.post("/mentors", async (request, response)=>{
     response.json({message})
 
 })
-router.patch("/mentors",(request, response)=>{
+router.patch("/:idKoder",(request, response)=>{
 
     response.json({message: "Aqui se actualizaran los koders" })
 
 })
 
-router.delete("/mentors",(request, response)=>{
+router.delete("/",(request, response)=>{
 
     response.json({message: "Aqui se eliminaran los koders" })
 })
