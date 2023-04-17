@@ -6,23 +6,24 @@ const router = express.Router() // crea el router
 router.get("/",async(request, response)=>{
     const dataFile = await fs.promises.readFile("./kodemia.json", "utf8")
     const json = JSON.parse(dataFile)
-    let mentors = json["mentors"]
-    console.log(mentors)
+    let filteredMentors = json["mentors"]
 
-    const {module, age, generations} = request.query
-
-    let filteredMentors = mentors
+    const {module, age, generations, id} = request.query
 
     if (module){ 
-        filteredMentors = filteredMentors.filter(mentor => mentor.module===module)
+        filteredMentors = filteredMentors.filter(mentor => mentor.module==module)
     }
 
     if (age){
-        filteredMentors = filteredMentors.filter(mentor => mentor.age===age)
+        filteredMentors = filteredMentors.filter(mentor => mentor.age==age)
     }
 
     if (generations){
-        filteredMentors = filteredMentors.filter(mentor => mentor.generations.includes(generation)===true)
+        filteredMentors = filteredMentors.filter(mentor => mentor.generations.includes(generation)==true)
+    }
+
+    if (id){
+        filteredMentors = filteredMentors.filter(mentor => mentor.id==id)
     }
     
     response.json({
