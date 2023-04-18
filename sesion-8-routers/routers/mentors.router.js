@@ -60,7 +60,6 @@ router.delete("/:idMentor", async (request, response)=>{
     const dataFile = await fs.promises.readFile("./kodemia.json", "utf8")
     const json = JSON.parse(dataFile)
     const elementIndex = json.mentors.findIndex((item => item.id == id))
-    console.log(elementIndex)
     json.mentors.splice(elementIndex, 1)
 
     await fs.promises.writeFile("./kodemia.json", JSON.stringify(json, null, 2), "utf8")
@@ -70,6 +69,7 @@ router.delete("/:idMentor", async (request, response)=>{
         message: "Se elimino mentor"
     }
 
+    response.json(message)
 })
 
 export default router
