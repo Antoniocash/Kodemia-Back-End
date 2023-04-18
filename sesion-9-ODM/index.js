@@ -1,9 +1,15 @@
 import mongoose from "mongoose"
+import dotenv from "dotenv"
 
-const DB_USER=`antonioCash`
+dotenv.config()
+
+/* const DB_USER=`antonioCash`
 const DB_PASSWORD =`7GrLYhPIKhhJTHkh`
 const DB_HOST = `kodemiacluster.tfmsipq.mongodb.net`
-const DB_NAME = `kodemia`
+const DB_NAME = `kodemia` */
+
+const {DB_USER, DB_PASSWORD, DB_HOST, DB_NAME} = process.env
+
 const URL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`
 
 /**
