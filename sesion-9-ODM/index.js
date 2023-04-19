@@ -2,11 +2,7 @@ import mongoose from "mongoose"
 import dotenv from "dotenv"
 
 dotenv.config()
-
-/* const DB_USER=`antonioCash`
-const DB_PASSWORD =`7GrLYhPIKhhJTHkh`
-const DB_HOST = `kodemiacluster.tfmsipq.mongodb.net`
-const DB_NAME = `kodemia` */
+console.log(process.env)
 
 const {DB_USER, DB_PASSWORD, DB_HOST, DB_NAME} = process.env
 
@@ -99,8 +95,8 @@ mongoose.connect(URL)
     const koderUpdated = await Koder.findByIdAndUpdate("643e009a6828687c743dbc5f",newData, { new : true })
     console.log(koderUpdated) */
 
-    const koderDeleted = await Koder.findByIdAndDelete("643e009a6828687c743dbc5f")
-    console.log(koderDeleted)
+  /*   const koderDeleted = await Koder.findByIdAndDelete("643e009a6828687c743dbc5f")
+    console.log(koderDeleted) */
 })
 
 .catch((error) =>{
