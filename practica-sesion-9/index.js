@@ -31,6 +31,8 @@ delete request.isAdmin
 next()
 })
 
+// Routers
+
 server.use("/", kodersRouter)
 
 //Conexion a base de datos
