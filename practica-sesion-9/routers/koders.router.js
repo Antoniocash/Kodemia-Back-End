@@ -3,7 +3,17 @@ import { Koder } from "../models/koders.model.js";
 
 const router = express.Router();
 
-router.get("/koders", async (request, response) => {
+router.use((request, response, next)=>{
+    console.log("Request en Koders Router")
+    next()
+})
+
+const middleWareGetKoders = (request, response, next) => {
+    console.log("GET /koders , middleware a nivel Endpoint.")
+    next()
+}
+
+router.get("/", middleWareGetKoders, async (request, response) => {
   try {
     const allKoders = await Koder.find({});
     response.json({
@@ -22,7 +32,7 @@ router.get("/koders", async (request, response) => {
   }
 });
 
-router.post("/koders", async (request, response) => {
+router.post("/", async (request, response) => {
   try {
     const newKoder = request.body;
     console.log({ newKoder });
@@ -44,7 +54,7 @@ router.post("/koders", async (request, response) => {
   }
 });
 
-router.patch("/koders/:id", async (request, response) => {
+router.patch("/:id", async (request, response) => {
   try {
     const { id } = request.params;
     const newData = request.body;
@@ -69,7 +79,7 @@ router.patch("/koders/:id", async (request, response) => {
   }
 });
 
-router.delete("/koders/:id", async (request, response) => {
+router.delete("/:id", async (request, response) => {
   try {
     const { id } = request.params;
     const koderDeleted = await Koder.findByIdAndDelete(id);

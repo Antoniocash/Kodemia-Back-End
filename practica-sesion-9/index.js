@@ -33,7 +33,7 @@ server.use((request, response, next) => {
 
 // Routers
 
-server.use("/", kodersRouter);
+server.use("/koders", kodersRouter);
 
 //Conexion a base de datos
 mongoose
