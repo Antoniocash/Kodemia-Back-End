@@ -70,26 +70,22 @@ router.patch("/koders/:id", async (request, response) => {
 });
 
 router.delete("/koders/:id", async (request, response) => {
-    try {
-
-        const { id } = request.params
-        const koderDeleted = await Koder.findByIdAndDelete(id)
-        response.json({
-            success: true,
-            data: {
-                data: koderDeleted
-            }
-        })
-        
-    } catch (error) {
-        response
-            .status(404)
-            .json({
-                success: false,
-                message: {
-                    message: error
-                }
-            })
-    }
-})
+  try {
+    const { id } = request.params;
+    const koderDeleted = await Koder.findByIdAndDelete(id);
+    response.json({
+      success: true,
+      data: {
+        data: koderDeleted,
+      },
+    });
+  } catch (error) {
+    response.status(404).json({
+      success: false,
+      message: {
+        message: error,
+      },
+    });
+  }
+});
 export default router;
