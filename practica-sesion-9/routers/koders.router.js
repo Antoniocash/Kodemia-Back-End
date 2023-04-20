@@ -13,6 +13,21 @@ const middleWareGetKoders = (request, response, next) => {
     next()
 }
 
+const middleWarePostKoders = (request, response, next) => {
+  console.log("POST /koders , middleware a nivel Endpoint.")
+  next()
+}
+
+const middleWarePatchKoders = (request, response, next) => {
+  console.log("PATCH /koders , middleware a nivel Endpoint.")
+  next()
+}
+
+const middleWareDeleteKoders = (request, response, next) => {
+  console.log("DELETE /koders , middleware a nivel Endpoint.")
+  next()
+}
+
 router.get("/", middleWareGetKoders, async (request, response) => {
   try {
     const allKoders = await Koder.find({});
@@ -32,7 +47,7 @@ router.get("/", middleWareGetKoders, async (request, response) => {
   }
 });
 
-router.post("/", async (request, response) => {
+router.post("/", middleWarePostKoders, async (request, response) => {
   try {
     const newKoder = request.body;
     console.log({ newKoder });
@@ -54,7 +69,7 @@ router.post("/", async (request, response) => {
   }
 });
 
-router.patch("/:id", async (request, response) => {
+router.patch("/:id", middleWarePatchKoders, async (request, response) => {
   try {
     const { id } = request.params;
     const newData = request.body;
@@ -79,7 +94,7 @@ router.patch("/:id", async (request, response) => {
   }
 });
 
-router.delete("/:id", async (request, response) => {
+router.delete("/:id", middleWareDeleteKoders, async (request, response) => {
   try {
     const { id } = request.params;
     const koderDeleted = await Koder.findByIdAndDelete(id);
